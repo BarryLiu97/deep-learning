@@ -1,7 +1,4 @@
 import sys
-
-import matplotlib.pyplot as plt
-
 sys.path.append("..")
 
 import numpy as np
@@ -74,7 +71,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.num = self._num_le.text()
             self.num += predict_num
             self._num_le.setText(self.num)
-
 
     def get_pic(self):
         pic = self._num_canvas.pixmap().toImage()
