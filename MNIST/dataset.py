@@ -17,7 +17,7 @@ class MNISTDataset(Dataset):
         
         img_path = op.join(self.img_dir, self.annot.iloc[idx, 0])
         target = self.annot.iloc[idx, 1]
-        img = cv2.imread(img_path)
+        img = cv2.imread(img_path, cv2.COLOR_BGR2RGB)
         
         if self.transform:
             img = self.transform(img)

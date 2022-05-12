@@ -56,7 +56,7 @@ class Model(nn.Module):
         
         block1 = self.conv1(x)
         block2 = self.conv2(block1)
-        block2 = block2.view(batch_size, -1) # flatten
+        block2 = block2.contiguous().view(batch_size, -1) # flatten
         # print(block2.shape[1])
         block3 = self.dense(block2)
         return block3
